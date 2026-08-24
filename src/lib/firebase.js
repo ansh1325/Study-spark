@@ -283,13 +283,10 @@ export const dbService = {
     }
 
     if (isFirebaseConfigured && firestore) {
-      try {
-        // If live, we can also sync to firestore user document
-        const userDocRef = doc(firestore, "users", mockUser.uid);
-        await setDoc(userDocRef, mockUser, { merge: true });
-      } catch (e) {
+      const userDocRef = doc(firestore, "users", mockUser.uid);
+      setDoc(userDocRef, mockUser, { merge: true }).catch(e => {
         console.error("Firebase Auth Sync Failed:", e);
-      }
+      });
     }
 
     return mockUser;
