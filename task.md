@@ -1,0 +1,23 @@
+# Study Spark Development Tasks
+
+- [ ] Initialize Next.js Project
+  - [ ] Run `create-next-app` help check
+  - [ ] Generate Next.js application in non-interactive mode with Tailwind CSS
+- [ ] Configure Project Settings & Global Styles
+  - [ ] Add dependencies (`lucide-react`, `firebase`, `@google/generative-ai`)
+  - [ ] Define global styles in CSS (`src/app/globals.css` with premium design tokens)
+- [ ] Set up Services & Data Models
+  - [ ] Create `firebase.js` with live connection & automatic LocalStorage fallback
+  - [ ] Create `gemini.js` AI helper functions (matching, copywriting, resume review)
+  - [ ] Implement secure Next.js API Route for Gemini AI operations
+- [ ] Build Application Pages & Views
+  - [ ] Create visual layout, header, footer, and role selector
+  - [ ] Create landing page (parent requirements submission form, highlights, AI advisor chat)
+  - [ ] Create simulated OTP login page
+  - [ ] Create Admin Dashboard (CRM pipeline Kanban board, active tutors, payments ledger, calendar, reports, AI matched section)
+  - [ ] Create Parent Portal (lead tracking, mock payment gate, tutor feedback)
+  - [ ] Create Tutor Portal (registration, lead matching list, earnings chart)
+  - [ ] Create Job Seeker Board (job listings, resume upload, AI feedback helper)
+- [ ] Verification & Build Checks
+  - [ ] Run local build checks to verify zero TypeScript/compilation errors
+  - [ ] Run application and confirm functionality
