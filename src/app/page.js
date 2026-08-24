@@ -56,6 +56,7 @@ export default function Home() {
       setTimings("");
     } catch (error) {
       console.error("Submission failed:", error);
+      alert("Submission Error: " + error.message);
     }
   };
 

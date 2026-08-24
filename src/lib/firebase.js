@@ -338,11 +338,9 @@ export const dbService = {
     };
 
     if (isFirebaseConfigured && firestore) {
-      try {
-        await setDoc(doc(firestore, "leads", newLead.id), newLead);
-      } catch (e) {
+      setDoc(doc(firestore, "leads", newLead.id), newLead).catch(e => {
         console.error("Firestore lead add failed:", e);
-      }
+      });
     }
 
     // Always keep LocalStorage updated for reliable fallback
@@ -354,12 +352,9 @@ export const dbService = {
 
   async updateLead(leadId, updatedFields) {
     if (isFirebaseConfigured && firestore) {
-      try {
-        const leadRef = doc(firestore, "leads", leadId);
-        await updateDoc(leadRef, updatedFields);
-      } catch (e) {
+      updateDoc(doc(firestore, "leads", leadId), updatedFields).catch(e => {
         console.error("Firestore lead update failed:", e);
-      }
+      });
     }
 
     const leads = JSON.parse(localStorage.getItem("ss_leads") || "[]");
@@ -397,11 +392,9 @@ export const dbService = {
     };
 
     if (isFirebaseConfigured && firestore) {
-      try {
-        await setDoc(doc(firestore, "tutors", newTutor.uid), newTutor);
-      } catch (e) {
+      setDoc(doc(firestore, "tutors", newTutor.uid), newTutor).catch(e => {
         console.error("Firestore tutor add failed:", e);
-      }
+      });
     }
 
     const tutors = JSON.parse(localStorage.getItem("ss_tutors") || "[]");
@@ -412,12 +405,9 @@ export const dbService = {
 
   async updateTutor(tutorUid, updatedFields) {
     if (isFirebaseConfigured && firestore) {
-      try {
-        const tutorRef = doc(firestore, "tutors", tutorUid);
-        await updateDoc(tutorRef, updatedFields);
-      } catch (e) {
+      updateDoc(doc(firestore, "tutors", tutorUid), updatedFields).catch(e => {
         console.error("Firestore tutor update failed:", e);
-      }
+      });
     }
 
     const tutors = JSON.parse(localStorage.getItem("ss_tutors") || "[]");
@@ -454,11 +444,9 @@ export const dbService = {
     };
 
     if (isFirebaseConfigured && firestore) {
-      try {
-        await setDoc(doc(firestore, "jobseekers", newSeeker.uid), newSeeker);
-      } catch (e) {
+      setDoc(doc(firestore, "jobseekers", newSeeker.uid), newSeeker).catch(e => {
         console.error("Firestore jobseeker add failed:", e);
-      }
+      });
     }
 
     const seekers = JSON.parse(localStorage.getItem("ss_jobseekers") || "[]");
@@ -469,12 +457,9 @@ export const dbService = {
 
   async updateJobSeeker(seekerUid, updatedFields) {
     if (isFirebaseConfigured && firestore) {
-      try {
-        const seekerRef = doc(firestore, "jobseekers", seekerUid);
-        await updateDoc(seekerRef, updatedFields);
-      } catch (e) {
+      updateDoc(doc(firestore, "jobseekers", seekerUid), updatedFields).catch(e => {
         console.error("Firestore jobseeker update failed:", e);
-      }
+      });
     }
 
     const seekers = JSON.parse(localStorage.getItem("ss_jobseekers") || "[]");
@@ -512,11 +497,9 @@ export const dbService = {
     };
 
     if (isFirebaseConfigured && firestore) {
-      try {
-        await setDoc(doc(firestore, "payments", newPayment.id), newPayment);
-      } catch (e) {
+      setDoc(doc(firestore, "payments", newPayment.id), newPayment).catch(e => {
         console.error("Firestore payment add failed:", e);
-      }
+      });
     }
 
     const payments = JSON.parse(localStorage.getItem("ss_payments") || "[]");
@@ -549,11 +532,9 @@ export const dbService = {
     };
 
     if (isFirebaseConfigured && firestore) {
-      try {
-        await setDoc(doc(firestore, "reminders", newReminder.id), newReminder);
-      } catch (e) {
+      setDoc(doc(firestore, "reminders", newReminder.id), newReminder).catch(e => {
         console.error("Firestore reminder add failed:", e);
-      }
+      });
     }
 
     const reminders = JSON.parse(localStorage.getItem("ss_reminders") || "[]");
@@ -564,12 +545,9 @@ export const dbService = {
 
   async updateReminder(id, updatedFields) {
     if (isFirebaseConfigured && firestore) {
-      try {
-        const remRef = doc(firestore, "reminders", id);
-        await updateDoc(remRef, updatedFields);
-      } catch (e) {
+      updateDoc(doc(firestore, "reminders", id), updatedFields).catch(e => {
         console.error("Firestore reminder update failed:", e);
-      }
+      });
     }
 
     const reminders = JSON.parse(localStorage.getItem("ss_reminders") || "[]");

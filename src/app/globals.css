@@ -175,3 +175,15 @@ body {
   height: 100%;
   background: linear-gradient(to bottom, var(--primary), var(--accent));
 }
+
+/* Select option theme styling to fix white-on-white text visibility */
+select, select option {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+}
+
+select:focus {
+  border-color: var(--primary) !important;
+  outline: none;
+}
+
